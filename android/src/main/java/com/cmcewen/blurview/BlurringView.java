@@ -134,6 +134,9 @@ public class BlurringView extends View {
             if (mBlurredBitmap == null
                     || mBlurredBitmap.getWidth() != scaledWidth
                     || mBlurredBitmap.getHeight() != scaledHeight) {
+                if (scaledWidth <= 0 || scaledHeight <= 0) {
+                    return false;
+                }
                 mBitmapToBlur = Bitmap.createBitmap(scaledWidth, scaledHeight,
                         Bitmap.Config.ARGB_8888);
                 if (mBitmapToBlur == null) {
