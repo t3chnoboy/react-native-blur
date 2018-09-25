@@ -1,6 +1,7 @@
 package com.cmcewen.blurview;
 
 import android.view.View;
+import android.app.Activity;
 
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.uimanager.SimpleViewManager;
