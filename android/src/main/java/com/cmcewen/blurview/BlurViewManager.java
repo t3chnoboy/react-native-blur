@@ -50,8 +50,8 @@ public class BlurViewManager extends SimpleViewManager<BlurringView> {
 
     @ReactProp(name = "viewRef")
     public void setViewRef(BlurringView view, int viewRef) {
-        if (context != null && context.getCurrentActivity() != null) {
-          View viewToBlur = context.getCurrentActivity().findViewById(viewRef);
+        if (context != null && context.getBaseContext() != null) {
+          View viewToBlur = ((Activity)context.getBaseContext()).getWindow().getDecorView().findViewById(viewRef);
 
           if (viewToBlur != null) {
               view.setBlurredView(viewToBlur);
